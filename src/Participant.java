@@ -29,23 +29,23 @@ public class Participant {
         totalNumberOfParticipants += 1;
     }
 
-    @Override
-    public String toString() {
-        return "Participant{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", gender='" + gender + '\'' +
-                '}';
-    }
 
     //Create a static void method addMaleParticipants() that will increase totalNumberOfMaleParticipants by 1
     public static void addMaleParticipants() {
         totalNumberOfMaleParticipants += 1;
     } //Create a static void method addFemaleParticipants() that will increase totalNumberOfFemaleParticipants by 1
-     public static void addFemaleParticipants () {
-            totalNumberOfFemaleParticipants += 1;
-    //Override toString() method and implement a new body that will return all information about a Participant
 
-
-        }
+    public static void addFemaleParticipants() {
+        totalNumberOfFemaleParticipants += 1;
+        //Override toString() method and implement a new body that will return all information about a Participant
     }
+        @Override
+        public String toString () {
+            return "Participant{" +
+                    "name='" + name + '\'' +
+                    ", age=" + age +
+                    ", gender='" + gender + '\'' +
+                    '}';
+        }
+
+}

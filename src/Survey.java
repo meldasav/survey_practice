@@ -21,7 +21,7 @@ public class Survey {
          */
 
         Scanner inputReader = new Scanner(System.in);
-        AbstractList<Participant>participants=new ArrayList<>();
+        ArrayList<Participant>participants=new ArrayList<>();
        int youngest =Integer.MAX_VALUE, oldest =Integer.MIN_VALUE;
 
         do {
@@ -29,20 +29,24 @@ public class Survey {
             String join = inputReader.next();
             if (join.toUpperCase().startsWith("Y")) {
                 Participant.addParticipants();
+
                 System.out.println(SurveyQuestions.askName);
                 String name = inputReader.next();
+
                 System.out.println(SurveyQuestions.askAge);
                 int age = inputReader.nextInt();
+
                 System.out.println(SurveyQuestions.askGender);
                 String gender = inputReader.next();
 
                 Participant participant=new Participant(name,age,gender);
-                Participant.addParticipants();
+
+                participants.add(participant);
+
                 if (gender.toUpperCase().startsWith("M")) Participant.addMaleParticipants();
                 else Participant.addFemaleParticipants();
             }
         } while (Participant.totalNumberOfParticipants < 3);
-        System.out.println(participants);
 
         for (Participant participant : participants) {
             System.out.println(participant);
